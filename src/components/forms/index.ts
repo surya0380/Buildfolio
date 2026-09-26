@@ -1,0 +1,5 @@
+export { ProfileForm } from './ProfileForm'
+export { SkillsForm } from './SkillsForm'
+export { ExperienceForm } from './ExperienceForm'
+export { EducationForm } from './EducationForm'
+export { ProjectsForm } from './ProjectsForm'
