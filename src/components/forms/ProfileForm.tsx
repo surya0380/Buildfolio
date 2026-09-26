@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { usePortfolio } from '../../hooks'
 import type { PortfolioProfile } from '../../features/portfolio/portfolio.types'
 
 export function ProfileForm() {
+    const { t } = useTranslation()
     const { portfolio, updateProfile } = usePortfolio()
     const profile = portfolio?.profile
 
@@ -23,65 +25,65 @@ export function ProfileForm() {
 
     return (
         <div className="form-section">
-            <h3>Profile Information</h3>
+            <h3>{t('editor.profile.section')}</h3>
             <form className="form-group">
                 <div className="form-field">
-                    <label htmlFor="name">Full Name</label>
+                    <label htmlFor="name">{t('editor.profile.name')}</label>
                     <input
                         id="name"
                         type="text"
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        placeholder="e.g., Jane Developer"
+                        placeholder={t('editor.profile.namePlaceholder')}
                     />
                 </div>
 
                 <div className="form-field">
-                    <label htmlFor="title">Professional Title</label>
+                    <label htmlFor="title">{t('editor.profile.title')}</label>
                     <input
                         id="title"
                         type="text"
                         name="title"
                         value={formData.title}
                         onChange={handleChange}
-                        placeholder="e.g., Full Stack Engineer"
+                        placeholder={t('editor.profile.titlePlaceholder')}
                     />
                 </div>
 
                 <div className="form-field">
-                    <label htmlFor="bio">Bio</label>
+                    <label htmlFor="bio">{t('editor.profile.bio')}</label>
                     <textarea
                         id="bio"
                         name="bio"
                         value={formData.bio}
                         onChange={handleChange}
-                        placeholder="Tell us about yourself..."
+                        placeholder={t('editor.profile.bioPlaceholder')}
                         rows={4}
                     />
                 </div>
 
                 <div className="form-field">
-                    <label htmlFor="email">Email</label>
+                    <label htmlFor="email">{t('editor.profile.email')}</label>
                     <input
                         id="email"
                         type="email"
                         name="email"
                         value={formData.email || ''}
                         onChange={handleChange}
-                        placeholder="your.email@example.com"
+                        placeholder={t('editor.profile.emailPlaceholder')}
                     />
                 </div>
 
                 <div className="form-field">
-                    <label htmlFor="phone">Phone (Optional)</label>
+                    <label htmlFor="phone">{t('editor.profile.phone')}</label>
                     <input
                         id="phone"
                         type="tel"
                         name="phone"
                         value={formData.phone || ''}
                         onChange={handleChange}
-                        placeholder="(555) 123-4567"
+                        placeholder={t('editor.profile.phonePlaceholder')}
                     />
                 </div>
             </form>

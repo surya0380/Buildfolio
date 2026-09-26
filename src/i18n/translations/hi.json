@@ -1,0 +1,131 @@
+{
+    "nav": {
+        "home": "होम",
+        "templates": "टेम्पलेट",
+        "editor": "संपादक",
+        "preview": "पूर्वावलोकन",
+        "settings": "सेटिंग्स"
+    },
+    "header": {
+        "title": "Buildfolio",
+        "theme": "थीम बदलें"
+    },
+    "home": {
+        "hero": "अपना पेशेवर पोर्टफोलियो बनाएं",
+        "subtitle": "कोई कोड लिखे बिना एक शानदार पोर्टफोलियो बनाएं। शुरुआत करने वालों और पेशेवरों के लिए परफेक्ट।",
+        "cta": "बनाना शुरू करें"
+    },
+    "editor": {
+        "title": "पोर्टफोलियो संपादक",
+        "profile": {
+            "section": "प्रोफाइल",
+            "name": "पूरा नाम",
+            "namePlaceholder": "Jane Developer",
+            "title": "पेशेवर शीर्षक",
+            "titlePlaceholder": "Full Stack Developer",
+            "bio": "परिचय",
+            "bioPlaceholder": "अपने बारे में बताएं",
+            "email": "ईमेल",
+            "emailPlaceholder": "jane@example.com",
+            "phone": "फोन",
+            "phonePlaceholder": "+1 (555) 123-4567"
+        },
+        "skills": {
+            "section": "कौशल",
+            "add": "कौशल जोड़ें",
+            "name": "कौशल का नाम",
+            "namePlaceholder": "React",
+            "level": "स्तर",
+            "beginner": "शुरुआत",
+            "intermediate": "मध्यवर्ती",
+            "advanced": "उन्नत",
+            "delete": "हटाएं"
+        },
+        "experience": {
+            "section": "अनुभव",
+            "add": "काम जोड़ें",
+            "company": "कंपनी",
+            "companyPlaceholder": "Tech Corp",
+            "position": "पद",
+            "positionPlaceholder": "Senior Developer",
+            "startDate": "शुरुआत की तारीख",
+            "endDate": "अंत की तारीख",
+            "currentlyWorking": "वर्तमान में यहां काम कर रहे हैं",
+            "description": "विवरण",
+            "descriptionPlaceholder": "अपनी जिम्मेदारियों और उपलब्धियों का वर्णन करें",
+            "delete": "हटाएं"
+        },
+        "education": {
+            "section": "शिक्षा",
+            "add": "शिक्षा जोड़ें",
+            "school": "स्कूल/विश्वविद्यालय",
+            "schoolPlaceholder": "State University",
+            "degree": "डिग्री",
+            "degreePlaceholder": "Bachelor of Science",
+            "field": "अध्ययन का क्षेत्र",
+            "fieldPlaceholder": "Computer Science",
+            "startDate": "शुरुआत की तारीख",
+            "endDate": "अंत की तारीख",
+            "description": "विवरण",
+            "descriptionPlaceholder": "उल्लेखनीय उपलब्धियां, GPA, प्रासंगिक पाठ्यक्रम",
+            "delete": "हटाएं"
+        },
+        "projects": {
+            "section": "प्रोजेक्ट्स",
+            "add": "प्रोजेक्ट जोड़ें",
+            "title": "प्रोजेक्ट का शीर्षक",
+            "titlePlaceholder": "My Awesome App",
+            "description": "विवरण",
+            "descriptionPlaceholder": "यह प्रोजेक्ट क्या करता है?",
+            "link": "प्रोजेक्ट लिंक",
+            "linkPlaceholder": "https://myproject.com",
+            "technologies": "तकनीकें",
+            "technologiesPlaceholder": "React, Node.js, MongoDB",
+            "delete": "हटाएं"
+        }
+    },
+    "templates": {
+        "title": "टेम्पलेट चुनें",
+        "subtitle": "अपने पोर्टफोलियो के लिए एक डिज़ाइन टेम्पलेट चुनें",
+        "classic": {
+            "name": "क्लासिक",
+            "description": "पारंपरिक और पेशेवर लेआउट"
+        },
+        "minimal": {
+            "name": "मिनिमल",
+            "description": "स्वच्छ और सरल डिज़ाइन"
+        },
+        "modern": {
+            "name": "आधुनिक",
+            "description": "साहसी और समकालीन लुक"
+        },
+        "selectButton": "टेम्पलेट चुनें",
+        "selectedLabel": "चयनित"
+    },
+    "preview": {
+        "title": "पोर्टफोलियो पूर्वावलोकन",
+        "subtitle": "देखें कि आपका पोर्टफोलियो दर्शकों को कैसा दिखता है"
+    },
+    "settings": {
+        "title": "सेटिंग्स",
+        "export": {
+            "section": "पोर्टफोलियो निर्यात करें",
+            "description": "अपने पोर्टफोलियो को एक स्टैंडअलोन HTML फ़ाइल के रूप में डाउनलोड करें",
+            "button": "पोर्टफोलियो डाउनलोड करें"
+        },
+        "theme": {
+            "section": "थीम",
+            "description": "अपने पोर्टफोलियो की उपस्थिति को अनुकूलित करें"
+        }
+    },
+    "common": {
+        "loading": "लोड हो रहा है...",
+        "save": "सहेजें",
+        "delete": "हटाएं",
+        "add": "जोड़ें",
+        "edit": "संपादित करें",
+        "cancel": "रद्द करें",
+        "close": "बंद करें",
+        "noData": "अभी कोई डेटा नहीं"
+    }
+}

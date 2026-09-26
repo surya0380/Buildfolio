@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { TrashIcon, PlusIcon } from '@heroicons/react/24/solid'
 import { usePortfolio } from '../../hooks'
 import type { Experience } from '../../features/portfolio/portfolio.types'
 
 export function ExperienceForm() {
+    const { t } = useTranslation()
     const { portfolio, addExperience, removeExperience } = usePortfolio()
     const experiences = portfolio?.experience || []
 
@@ -54,35 +56,35 @@ export function ExperienceForm() {
 
     return (
         <div className="form-section">
-            <h3>Work Experience</h3>
+            <h3>{t('editor.experience.section')}</h3>
             <form className="form-group">
                 <div className="form-field">
-                    <label htmlFor="company">Company</label>
+                    <label htmlFor="company">{t('editor.experience.company')}</label>
                     <input
                         id="company"
                         type="text"
                         name="company"
                         value={formData.company}
                         onChange={handleChange}
-                        placeholder="Company name"
+                        placeholder={t('editor.experience.companyPlaceholder')}
                     />
                 </div>
 
                 <div className="form-field">
-                    <label htmlFor="position">Position</label>
+                    <label htmlFor="position">{t('editor.experience.position')}</label>
                     <input
                         id="position"
                         type="text"
                         name="position"
                         value={formData.position}
                         onChange={handleChange}
-                        placeholder="Job title"
+                        placeholder={t('editor.experience.positionPlaceholder')}
                     />
                 </div>
 
                 <div className="form-row">
                     <div className="form-field">
-                        <label htmlFor="startDate">Start Date</label>
+                        <label htmlFor="startDate">{t('editor.experience.startDate')}</label>
                         <input
                             id="startDate"
                             type="month"
@@ -94,7 +96,7 @@ export function ExperienceForm() {
 
                     {!formData.current && (
                         <div className="form-field">
-                            <label htmlFor="endDate">End Date</label>
+                            <label htmlFor="endDate">{t('editor.experience.endDate')}</label>
                             <input
                                 id="endDate"
                                 type="month"
@@ -114,17 +116,17 @@ export function ExperienceForm() {
                         checked={formData.current}
                         onChange={handleChange}
                     />
-                    <label htmlFor="current">Currently working here</label>
+                    <label htmlFor="current">{t('editor.experience.currentlyWorking')}</label>
                 </div>
 
                 <div className="form-field">
-                    <label htmlFor="description">Description (Optional)</label>
+                    <label htmlFor="description">{t('editor.experience.description')}</label>
                     <textarea
                         id="description"
                         name="description"
                         value={formData.description}
                         onChange={handleChange}
-                        placeholder="Describe your responsibilities and achievements..."
+                        placeholder={t('editor.experience.descriptionPlaceholder')}
                         rows={3}
                     />
                 </div>
@@ -135,13 +137,13 @@ export function ExperienceForm() {
                     onClick={handleAddExperience}
                 >
                     <PlusIcon className="btn-icon" />
-                    Add Experience
+                    {t('editor.experience.add')}
                 </button>
             </form>
 
             {experiences.length > 0 && (
                 <div className="form-list">
-                    <h4>Your Experience</h4>
+                    <h4>{t('editor.experience.section')}</h4>
                     <div className="list-items">
                         {experiences.map((exp) => (
                             <div key={exp.id} className="list-item">

@@ -1,26 +1,36 @@
+import { useTranslation } from 'react-i18next'
+import { ArrowDownTrayIcon } from '@heroicons/react/24/solid'
+import { usePortfolio } from '../hooks'
+import { exportPortfolioHTML } from '../utils/export'
+
 export function SettingsPage() {
+    const { t } = useTranslation()
+    const { portfolio } = usePortfolio()
+
+    const handleExport = () => {
+        if (portfolio) {
+            exportPortfolioHTML(portfolio)
+        }
+    }
+
     return (
         <div className="settings-page">
             <div className="settings-header">
-                <h2>Portfolio Settings</h2>
-                <p>Customize your portfolio appearance and behavior</p>
+                <h2>{t('settings.title')}</h2>
+                <p>{t('settings.export.description')}</p>
             </div>
             <div className="settings-content">
                 <section className="settings-section">
-                    <h3>Theme</h3>
-                    <p>Choose your preferred theme (already available in header)</p>
+                    <h3>{t('settings.theme.section')}</h3>
+                    <p>{t('settings.theme.description')}</p>
                 </section>
-                <section className="settings-section">
-                    <h3>Template</h3>
-                    <p>Select a portfolio template</p>
-                </section>
-                <section className="settings-section">
-                    <h3>Colors</h3>
-                    <p>Customize accent colors</p>
-                </section>
-                <section className="settings-section">
-                    <h3>Visibility</h3>
-                    <p>Control what sections are visible</p>
+                <section className="export-section">
+                    <h3>{t('settings.export.section')}</h3>
+                    <p>{t('settings.export.description')}</p>
+                    <button className="btn-export" onClick={handleExport}>
+                        <ArrowDownTrayIcon className="btn-icon" />
+                        {t('settings.export.button')}
+                    </button>
                 </section>
             </div>
         </div>

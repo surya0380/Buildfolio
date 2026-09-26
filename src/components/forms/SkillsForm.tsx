@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { TrashIcon, PlusIcon } from '@heroicons/react/24/solid'
 import { usePortfolio } from '../../hooks'
 import type { Skill } from '../../features/portfolio/portfolio.types'
 
 export function SkillsForm() {
+    const { t } = useTranslation()
     const { portfolio, addSkill, removeSkill } = usePortfolio()
     const skills = portfolio?.skills || []
 
@@ -31,31 +33,31 @@ export function SkillsForm() {
 
     return (
         <div className="form-section">
-            <h3>Skills</h3>
+            <h3>{t('editor.skills.section')}</h3>
             <form className="form-group">
                 <div className="form-field">
-                    <label htmlFor="skill-name">Skill Name</label>
+                    <label htmlFor="skill-name">{t('editor.skills.name')}</label>
                     <input
                         id="skill-name"
                         type="text"
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        placeholder="e.g., React, TypeScript"
+                        placeholder={t('editor.skills.namePlaceholder')}
                     />
                 </div>
 
                 <div className="form-field">
-                    <label htmlFor="skill-level">Level</label>
+                    <label htmlFor="skill-level">{t('editor.skills.level')}</label>
                     <select
                         id="skill-level"
                         name="level"
                         value={formData.level}
                         onChange={handleChange}
                     >
-                        <option value="beginner">Beginner</option>
-                        <option value="intermediate">Intermediate</option>
-                        <option value="advanced">Advanced</option>
+                        <option value="beginner">{t('editor.skills.beginner')}</option>
+                        <option value="intermediate">{t('editor.skills.intermediate')}</option>
+                        <option value="advanced">{t('editor.skills.advanced')}</option>
                     </select>
                 </div>
 
@@ -65,13 +67,13 @@ export function SkillsForm() {
                     onClick={handleAddSkill}
                 >
                     <PlusIcon className="btn-icon" />
-                    Add Skill
+                    {t('editor.skills.add')}
                 </button>
             </form>
 
             {skills.length > 0 && (
                 <div className="form-list">
-                    <h4>Your Skills</h4>
+                    <h4>{t('editor.skills.section')}</h4>
                     <div className="list-items">
                         {skills.map((skill) => (
                             <div key={skill.id} className="list-item">

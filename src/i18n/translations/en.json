@@ -1,0 +1,131 @@
+{
+    "nav": {
+        "home": "Home",
+        "templates": "Templates",
+        "editor": "Editor",
+        "preview": "Preview",
+        "settings": "Settings"
+    },
+    "header": {
+        "title": "Buildfolio",
+        "theme": "Toggle Theme"
+    },
+    "home": {
+        "hero": "Create Your Professional Portfolio",
+        "subtitle": "Build a stunning portfolio without writing any code. Perfect for beginners and professionals.",
+        "cta": "Start Building"
+    },
+    "editor": {
+        "title": "Portfolio Editor",
+        "profile": {
+            "section": "Profile",
+            "name": "Full Name",
+            "namePlaceholder": "Jane Developer",
+            "title": "Professional Title",
+            "titlePlaceholder": "Full Stack Developer",
+            "bio": "Bio",
+            "bioPlaceholder": "Tell us about yourself",
+            "email": "Email",
+            "emailPlaceholder": "jane@example.com",
+            "phone": "Phone",
+            "phonePlaceholder": "+1 (555) 123-4567"
+        },
+        "skills": {
+            "section": "Skills",
+            "add": "Add Skill",
+            "name": "Skill Name",
+            "namePlaceholder": "React",
+            "level": "Level",
+            "beginner": "Beginner",
+            "intermediate": "Intermediate",
+            "advanced": "Advanced",
+            "delete": "Delete"
+        },
+        "experience": {
+            "section": "Experience",
+            "add": "Add Work",
+            "company": "Company",
+            "companyPlaceholder": "Tech Corp",
+            "position": "Position",
+            "positionPlaceholder": "Senior Developer",
+            "startDate": "Start Date",
+            "endDate": "End Date",
+            "currentlyWorking": "Currently working here",
+            "description": "Description",
+            "descriptionPlaceholder": "Describe your responsibilities and achievements",
+            "delete": "Delete"
+        },
+        "education": {
+            "section": "Education",
+            "add": "Add Education",
+            "school": "School/University",
+            "schoolPlaceholder": "State University",
+            "degree": "Degree",
+            "degreePlaceholder": "Bachelor of Science",
+            "field": "Field of Study",
+            "fieldPlaceholder": "Computer Science",
+            "startDate": "Start Date",
+            "endDate": "End Date",
+            "description": "Description",
+            "descriptionPlaceholder": "Notable achievements, GPA, relevant coursework",
+            "delete": "Delete"
+        },
+        "projects": {
+            "section": "Projects",
+            "add": "Add Project",
+            "title": "Project Title",
+            "titlePlaceholder": "My Awesome App",
+            "description": "Description",
+            "descriptionPlaceholder": "What does this project do?",
+            "link": "Project Link",
+            "linkPlaceholder": "https://myproject.com",
+            "technologies": "Technologies",
+            "technologiesPlaceholder": "React, Node.js, MongoDB",
+            "delete": "Delete"
+        }
+    },
+    "templates": {
+        "title": "Choose Template",
+        "subtitle": "Select a design template for your portfolio",
+        "classic": {
+            "name": "Classic",
+            "description": "Traditional and professional layout"
+        },
+        "minimal": {
+            "name": "Minimal",
+            "description": "Clean and simple design"
+        },
+        "modern": {
+            "name": "Modern",
+            "description": "Bold and contemporary look"
+        },
+        "selectButton": "Select Template",
+        "selectedLabel": "Selected"
+    },
+    "preview": {
+        "title": "Portfolio Preview",
+        "subtitle": "See how your portfolio looks to visitors"
+    },
+    "settings": {
+        "title": "Settings",
+        "export": {
+            "section": "Export Portfolio",
+            "description": "Download your portfolio as a standalone HTML file",
+            "button": "Download Portfolio"
+        },
+        "theme": {
+            "section": "Theme",
+            "description": "Customize the appearance of your portfolio"
+        }
+    },
+    "common": {
+        "loading": "Loading...",
+        "save": "Save",
+        "delete": "Delete",
+        "add": "Add",
+        "edit": "Edit",
+        "cancel": "Cancel",
+        "close": "Close",
+        "noData": "No data yet"
+    }
+}

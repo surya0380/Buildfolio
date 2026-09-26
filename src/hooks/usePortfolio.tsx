@@ -5,6 +5,7 @@ interface PortfolioContextType {
     portfolio: Portfolio | null
     updatePortfolio: (portfolio: Portfolio) => void
     updateProfile: (key: string, value: unknown) => void
+    updateTemplate: (template: 'classic' | 'minimal' | 'modern') => void
     addSkill: (skill: Skill) => void
     updateSkill: (skillId: string, skill: Skill) => void
     removeSkill: (skillId: string) => void
@@ -34,6 +35,17 @@ export function PortfolioProvider({ children, initialPortfolio }: { children: Re
             profile: {
                 ...prev.profile,
                 [key]: value,
+            },
+            updatedAt: new Date().toISOString(),
+        }))
+    }, [])
+
+    const updateTemplate = useCallback((template: 'classic' | 'minimal' | 'modern') => {
+        setPortfolio((prev) => ({
+            ...prev,
+            settings: {
+                ...prev.settings,
+                template,
             },
             updatedAt: new Date().toISOString(),
         }))
@@ -140,6 +152,7 @@ export function PortfolioProvider({ children, initialPortfolio }: { children: Re
             portfolio,
             updatePortfolio,
             updateProfile,
+            updateTemplate,
             addSkill,
             updateSkill,
             removeSkill,

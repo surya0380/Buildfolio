@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { HomeIcon, PencilSquareIcon, EyeIcon, SparklesIcon, AdjustmentsHorizontalIcon } from '@heroicons/react/24/solid'
 import type { PageType } from '../../App'
 
@@ -7,17 +8,19 @@ interface SidebarProps {
 }
 
 export function Sidebar({ currentPage, onNavigate }: SidebarProps) {
+    const { t } = useTranslation()
+
     const navItems: Array<{ page: PageType; icon: React.ReactNode; label: string }> = [
-        { page: 'home', icon: <HomeIcon />, label: 'Home' },
-        { page: 'templates', icon: <SparklesIcon />, label: 'Templates' },
-        { page: 'editor', icon: <PencilSquareIcon />, label: 'Editor' },
-        { page: 'preview', icon: <EyeIcon />, label: 'Preview' },
-        { page: 'settings', icon: <AdjustmentsHorizontalIcon />, label: 'Settings' },
+        { page: 'home', icon: <HomeIcon />, label: t('nav.home') },
+        { page: 'templates', icon: <SparklesIcon />, label: t('nav.templates') },
+        { page: 'editor', icon: <PencilSquareIcon />, label: t('nav.editor') },
+        { page: 'preview', icon: <EyeIcon />, label: t('nav.preview') },
+        { page: 'settings', icon: <AdjustmentsHorizontalIcon />, label: t('nav.settings') },
     ]
 
     return (
-        <aside className="sidebar">
-            <nav className="sidebar-nav">
+        <aside className="sidebar" aria-label="Navigation">
+            <nav className="sidebar-nav" role="navigation" aria-label="Main navigation">
                 {navItems.map((item) => (
                     <button
                         key={item.page}
@@ -25,8 +28,11 @@ export function Sidebar({ currentPage, onNavigate }: SidebarProps) {
                         onClick={() => onNavigate(item.page)}
                         title={item.label}
                         aria-label={item.label}
+                        aria-current={currentPage === item.page ? 'page' : undefined}
                     >
-                        <span className="sidebar-icon">{item.icon}</span>
+                        <span className="sidebar-icon" aria-hidden="true">
+                            {item.icon}
+                        </span>
                         <span className="sidebar-label">{item.label}</span>
                     </button>
                 ))}

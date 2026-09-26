@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { TrashIcon, PlusIcon } from '@heroicons/react/24/solid'
 import { usePortfolio } from '../../hooks'
 import type { Education } from '../../features/portfolio/portfolio.types'
 
 export function EducationForm() {
+    const { t } = useTranslation()
     const { portfolio, addEducation, removeEducation } = usePortfolio()
     const educations = portfolio?.education || []
 
@@ -49,47 +51,47 @@ export function EducationForm() {
 
     return (
         <div className="form-section">
-            <h3>Education</h3>
+            <h3>{t('editor.education.section')}</h3>
             <form className="form-group">
                 <div className="form-field">
-                    <label htmlFor="school">School/University</label>
+                    <label htmlFor="school">{t('editor.education.school')}</label>
                     <input
                         id="school"
                         type="text"
                         name="school"
                         value={formData.school}
                         onChange={handleChange}
-                        placeholder="Name of institution"
+                        placeholder={t('editor.education.schoolPlaceholder')}
                     />
                 </div>
 
                 <div className="form-field">
-                    <label htmlFor="degree">Degree</label>
+                    <label htmlFor="degree">{t('editor.education.degree')}</label>
                     <input
                         id="degree"
                         type="text"
                         name="degree"
                         value={formData.degree}
                         onChange={handleChange}
-                        placeholder="e.g., Bachelor of Science"
+                        placeholder={t('editor.education.degreePlaceholder')}
                     />
                 </div>
 
                 <div className="form-field">
-                    <label htmlFor="field">Field of Study</label>
+                    <label htmlFor="field">{t('editor.education.field')}</label>
                     <input
                         id="field"
                         type="text"
                         name="field"
                         value={formData.field}
                         onChange={handleChange}
-                        placeholder="e.g., Computer Science"
+                        placeholder={t('editor.education.fieldPlaceholder')}
                     />
                 </div>
 
                 <div className="form-row">
                     <div className="form-field">
-                        <label htmlFor="startDate">Start Date</label>
+                        <label htmlFor="startDate">{t('editor.education.startDate')}</label>
                         <input
                             id="startDate"
                             type="month"
@@ -100,7 +102,7 @@ export function EducationForm() {
                     </div>
 
                     <div className="form-field">
-                        <label htmlFor="endDate">End Date (Optional)</label>
+                        <label htmlFor="endDate">{t('editor.education.endDate')}</label>
                         <input
                             id="endDate"
                             type="month"
@@ -112,13 +114,13 @@ export function EducationForm() {
                 </div>
 
                 <div className="form-field">
-                    <label htmlFor="description">Description (Optional)</label>
+                    <label htmlFor="description">{t('editor.education.description')}</label>
                     <textarea
                         id="description"
                         name="description"
                         value={formData.description}
                         onChange={handleChange}
-                        placeholder="Additional details about your education..."
+                        placeholder={t('editor.education.descriptionPlaceholder')}
                         rows={3}
                     />
                 </div>
@@ -129,13 +131,13 @@ export function EducationForm() {
                     onClick={handleAddEducation}
                 >
                     <PlusIcon className="btn-icon" />
-                    Add Education
+                    {t('editor.education.add')}
                 </button>
             </form>
 
             {educations.length > 0 && (
                 <div className="form-list">
-                    <h4>Your Education</h4>
+                    <h4>{t('editor.education.section')}</h4>
                     <div className="list-items">
                         {educations.map((edu) => (
                             <div key={edu.id} className="list-item">

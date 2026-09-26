@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { TrashIcon, PlusIcon } from '@heroicons/react/24/solid'
 import { usePortfolio } from '../../hooks'
 import type { Project } from '../../features/portfolio/portfolio.types'
 
 export function ProjectsForm() {
+    const { t } = useTranslation()
     const { portfolio, addProject, removeProject } = usePortfolio()
     const projects = portfolio?.projects || []
 
@@ -61,60 +63,60 @@ export function ProjectsForm() {
 
     return (
         <div className="form-section">
-            <h3>Projects</h3>
+            <h3>{t('editor.projects.section')}</h3>
             <form className="form-group">
                 <div className="form-field">
-                    <label htmlFor="project-title">Project Title</label>
+                    <label htmlFor="project-title">{t('editor.projects.title')}</label>
                     <input
                         id="project-title"
                         type="text"
                         name="title"
                         value={formData.title}
                         onChange={handleChange}
-                        placeholder="Your project name"
+                        placeholder={t('editor.projects.titlePlaceholder')}
                     />
                 </div>
 
                 <div className="form-field">
-                    <label htmlFor="project-desc">Description</label>
+                    <label htmlFor="project-desc">{t('editor.projects.description')}</label>
                     <textarea
                         id="project-desc"
                         name="description"
                         value={formData.description}
                         onChange={handleChange}
-                        placeholder="Describe your project..."
+                        placeholder={t('editor.projects.descriptionPlaceholder')}
                         rows={3}
                     />
                 </div>
 
                 <div className="form-field">
-                    <label htmlFor="project-link">Project Link (Optional)</label>
+                    <label htmlFor="project-link">{t('editor.projects.link')}</label>
                     <input
                         id="project-link"
                         type="url"
                         name="link"
                         value={formData.link}
                         onChange={handleChange}
-                        placeholder="https://example.com"
+                        placeholder={t('editor.projects.linkPlaceholder')}
                     />
                 </div>
 
                 <div className="form-field">
-                    <label htmlFor="project-tech">Technologies</label>
+                    <label htmlFor="project-tech">{t('editor.projects.technologies')}</label>
                     <div className="tech-input-group">
                         <input
                             id="project-tech"
                             type="text"
                             value={currentTech}
                             onChange={(e) => setCurrentTech(e.target.value)}
-                            placeholder="e.g., React"
+                            placeholder={t('editor.projects.technologiesPlaceholder')}
                         />
                         <button
                             type="button"
                             className="btn-secondary"
                             onClick={handleAddTech}
                         >
-                            Add
+                            {t('common.add')}
                         </button>
                     </div>
                     {formData.technologies.length > 0 && (
@@ -141,13 +143,13 @@ export function ProjectsForm() {
                     onClick={handleAddProject}
                 >
                     <PlusIcon className="btn-icon" />
-                    Add Project
+                    {t('editor.projects.add')}
                 </button>
             </form>
 
             {projects.length > 0 && (
                 <div className="form-list">
-                    <h4>Your Projects</h4>
+                    <h4>{t('editor.projects.section')}</h4>
                     <div className="list-items">
                         {projects.map((project) => (
                             <div key={project.id} className="list-item">
