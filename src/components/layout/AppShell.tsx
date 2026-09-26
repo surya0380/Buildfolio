@@ -1,12 +1,17 @@
 import type { ReactNode } from 'react'
 import { MoonIcon, SunIcon } from '@heroicons/react/24/solid'
 import { useTheme } from '../../hooks'
+import { Sidebar } from './Sidebar'
+import type { PageType } from '../../App'
 
 export interface AppShellProps {
     children: ReactNode
+    currentPage?: PageType
+    onNavigate?: (page: PageType) => void
+    showSidebar?: boolean
 }
 
-export function AppShell({ children }: AppShellProps) {
+export function AppShell({ children, currentPage = 'home', onNavigate, showSidebar = true }: AppShellProps) {
     const { theme, toggleTheme } = useTheme()
 
     return (
@@ -28,7 +33,10 @@ export function AppShell({ children }: AppShellProps) {
                     </button>
                 </div>
             </header>
-            <div className="app-content">{children}</div>
+            <div className="app-main">
+                {showSidebar && onNavigate && <Sidebar currentPage={currentPage} onNavigate={onNavigate} />}
+                <div className="app-content">{children}</div>
+            </div>
         </div>
     )
 }

@@ -1,1 +1,5 @@
 export { HomePage } from './HomePage'
+export { EditorPage } from './EditorPage'
+export { PreviewPage } from './PreviewPage'
+export { TemplatesPage } from './TemplatesPage'
+export { SettingsPage } from './SettingsPage'
