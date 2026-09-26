@@ -1,12 +1,15 @@
-import { AppShell } from '../components/layout/AppShell'
+import { AppShell } from '../components'
 
 export function HomePage() {
     return (
         <AppShell>
-            <main className="home-page">
-                <h1>Buildfolio</h1>
-                <p>Portfolio builder scaffold is ready.</p>
-            </main>
+            <div className="home-page">
+                <section className="hero">
+                    <h2>Create Your Professional Portfolio</h2>
+                    <p>Build, customize, and share your portfolio in minutes—no coding required.</p>
+                    <button className="cta-button">Start Building</button>
+                </section>
+            </div>
         </AppShell>
     )
 }
