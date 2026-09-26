@@ -1,1 +1,1 @@
-export { PortfolioProfile } from './portfolio/portfolio.types'
+export type { PortfolioProfile } from './portfolio/portfolio.types'
